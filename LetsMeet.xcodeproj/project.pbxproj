@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50F976B72B81579B3DC9C16F /* Pods_LetsMeet_LetsMeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1189429856C8BB0EF76E879E /* Pods_LetsMeet_LetsMeetUITests.framework */; };
 		5D5CF06524F4FDBF0067CDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF06424F4FDBF0067CDFA /* AppDelegate.swift */; };
 		5D5CF06724F4FDBF0067CDFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF06624F4FDBF0067CDFA /* SceneDelegate.swift */; };
 		5D5CF06924F4FDBF0067CDFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF06824F4FDBF0067CDFA /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 		5D5CF07624F4FDC20067CDFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5CF07424F4FDC20067CDFA /* LaunchScreen.storyboard */; };
 		5D5CF08124F4FDC20067CDFA /* LetsMeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF08024F4FDC20067CDFA /* LetsMeetTests.swift */; };
 		5D5CF08C24F4FDC20067CDFA /* LetsMeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF08B24F4FDC20067CDFA /* LetsMeetUITests.swift */; };
+		5D5CF09E24F5008D0067CDFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D5CF09D24F5008D0067CDFA /* GoogleService-Info.plist */; };
+		6F0D5CFAE9A185301D1935A4 /* Pods_LetsMeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65F249EA0215F6E5557CE2F /* Pods_LetsMeetTests.framework */; };
+		DE64A0133B6AAAF6FFAE5E97 /* Pods_LetsMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09426C1462F87E13CC6E3A4B /* Pods-LetsMeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.release.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.release.xcconfig"; sourceTree = "<group>"; };
+		1189429856C8BB0EF76E879E /* Pods_LetsMeet_LetsMeetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet_LetsMeetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		201890D85C33A0793EDB4B61 /* Pods-LetsMeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeetTests.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeetTests/Pods-LetsMeetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2215C8D1A20181AB90410A26 /* Pods-LetsMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.debug.xcconfig"; sourceTree = "<group>"; };
+		5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5CF06124F4FDBF0067CDFA /* LetsMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5CF06424F4FDBF0067CDFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D5CF06624F4FDBF0067CDFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +62,11 @@
 		5D5CF08724F4FDC20067CDFA /* LetsMeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetsMeetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5CF08B24F4FDC20067CDFA /* LetsMeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsMeetUITests.swift; sourceTree = "<group>"; };
 		5D5CF08D24F4FDC20067CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D5CF09D24F5008D0067CDFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6B604C7AEE20DFA3D9E3B0B4 /* Pods-LetsMeet-LetsMeetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet-LetsMeetUITests.release.xcconfig"; path = "Target Support Files/Pods-LetsMeet-LetsMeetUITests/Pods-LetsMeet-LetsMeetUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B01ED6701865583923424271 /* Pods-LetsMeet-LetsMeetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet-LetsMeetUITests.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet-LetsMeetUITests/Pods-LetsMeet-LetsMeetUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C65F249EA0215F6E5557CE2F /* Pods_LetsMeetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA62D01C24FCD032209A3605 /* Pods-LetsMeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeetTests.release.xcconfig"; path = "Target Support Files/Pods-LetsMeetTests/Pods-LetsMeetTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE64A0133B6AAAF6FFAE5E97 /* Pods_LetsMeet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0D5CFAE9A185301D1935A4 /* Pods_LetsMeetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +90,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F976B72B81579B3DC9C16F /* Pods_LetsMeet_LetsMeetUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C14EABDB48A26762543CA09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */,
+				1189429856C8BB0EF76E879E /* Pods_LetsMeet_LetsMeetUITests.framework */,
+				C65F249EA0215F6E5557CE2F /* Pods_LetsMeetTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5D5CF05824F4FDBF0067CDFA = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +114,8 @@
 				5D5CF07F24F4FDC20067CDFA /* LetsMeetTests */,
 				5D5CF08A24F4FDC20067CDFA /* LetsMeetUITests */,
 				5D5CF06224F4FDBF0067CDFA /* Products */,
+				E6206FFDDC046A2F71301D1B /* Pods */,
+				3C14EABDB48A26762543CA09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +140,7 @@
 				5D5CF07224F4FDC20067CDFA /* Assets.xcassets */,
 				5D5CF07424F4FDC20067CDFA /* LaunchScreen.storyboard */,
 				5D5CF07724F4FDC20067CDFA /* Info.plist */,
+				5D5CF09D24F5008D0067CDFA /* GoogleService-Info.plist */,
 				5D5CF06F24F4FDBF0067CDFA /* LetsMeet.xcdatamodeld */,
 			);
 			path = LetsMeet;
@@ -134,6 +164,20 @@
 			path = LetsMeetUITests;
 			sourceTree = "<group>";
 		};
+		E6206FFDDC046A2F71301D1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2215C8D1A20181AB90410A26 /* Pods-LetsMeet.debug.xcconfig */,
+				09426C1462F87E13CC6E3A4B /* Pods-LetsMeet.release.xcconfig */,
+				B01ED6701865583923424271 /* Pods-LetsMeet-LetsMeetUITests.debug.xcconfig */,
+				6B604C7AEE20DFA3D9E3B0B4 /* Pods-LetsMeet-LetsMeetUITests.release.xcconfig */,
+				201890D85C33A0793EDB4B61 /* Pods-LetsMeetTests.debug.xcconfig */,
+				EA62D01C24FCD032209A3605 /* Pods-LetsMeetTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D5CF09024F4FDC20067CDFA /* Build configuration list for PBXNativeTarget "LetsMeet" */;
 			buildPhases = (
+				F3AE7360455E2AA63DF4CC26 /* [CP] Check Pods Manifest.lock */,
 				5D5CF05D24F4FDBF0067CDFA /* Sources */,
 				5D5CF05E24F4FDBF0067CDFA /* Frameworks */,
 				5D5CF05F24F4FDBF0067CDFA /* Resources */,
+				2887CACBF70F736DBBF6EC4E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D5CF09324F4FDC20067CDFA /* Build configuration list for PBXNativeTarget "LetsMeetTests" */;
 			buildPhases = (
+				B69D7FEB1FE2176C4D877222 /* [CP] Check Pods Manifest.lock */,
 				5D5CF07824F4FDC20067CDFA /* Sources */,
 				5D5CF07924F4FDC20067CDFA /* Frameworks */,
 				5D5CF07A24F4FDC20067CDFA /* Resources */,
@@ -176,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D5CF09624F4FDC20067CDFA /* Build configuration list for PBXNativeTarget "LetsMeetUITests" */;
 			buildPhases = (
+				59B907484FE75984FAC202AB /* [CP] Check Pods Manifest.lock */,
 				5D5CF08324F4FDC20067CDFA /* Sources */,
 				5D5CF08424F4FDC20067CDFA /* Frameworks */,
 				5D5CF08524F4FDC20067CDFA /* Resources */,
+				EB093555D0220AE2739F727B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5CF07624F4FDC20067CDFA /* LaunchScreen.storyboard in Resources */,
+				5D5CF09E24F5008D0067CDFA /* GoogleService-Info.plist in Resources */,
 				5D5CF07324F4FDC20067CDFA /* Assets.xcassets in Resources */,
 				5D5CF06C24F4FDBF0067CDFA /* Main.storyboard in Resources */,
 			);
@@ -258,6 +308,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2887CACBF70F736DBBF6EC4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LetsMeet/Pods-LetsMeet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LetsMeet/Pods-LetsMeet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LetsMeet/Pods-LetsMeet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59B907484FE75984FAC202AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LetsMeet-LetsMeetUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B69D7FEB1FE2176C4D877222 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LetsMeetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB093555D0220AE2739F727B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LetsMeet-LetsMeetUITests/Pods-LetsMeet-LetsMeetUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LetsMeet-LetsMeetUITests/Pods-LetsMeet-LetsMeetUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LetsMeet-LetsMeetUITests/Pods-LetsMeet-LetsMeetUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3AE7360455E2AA63DF4CC26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LetsMeet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D5CF05D24F4FDBF0067CDFA /* Sources */ = {
@@ -441,6 +594,7 @@
 		};
 		5D5CF09124F4FDC20067CDFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2215C8D1A20181AB90410A26 /* Pods-LetsMeet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +614,7 @@
 		};
 		5D5CF09224F4FDC20067CDFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09426C1462F87E13CC6E3A4B /* Pods-LetsMeet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -479,6 +634,7 @@
 		};
 		5D5CF09424F4FDC20067CDFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 201890D85C33A0793EDB4B61 /* Pods-LetsMeetTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,6 +657,7 @@
 		};
 		5D5CF09524F4FDC20067CDFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA62D01C24FCD032209A3605 /* Pods-LetsMeetTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -523,6 +680,7 @@
 		};
 		5D5CF09724F4FDC20067CDFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B01ED6701865583923424271 /* Pods-LetsMeet-LetsMeetUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +701,7 @@
 		};
 		5D5CF09824F4FDC20067CDFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B604C7AEE20DFA3D9E3B0B4 /* Pods-LetsMeet-LetsMeetUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

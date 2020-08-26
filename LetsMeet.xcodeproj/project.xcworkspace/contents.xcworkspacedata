@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/takinamishouta/Desktop/LetsMeet/LetsMeet/GoogleService-Info.plist">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
