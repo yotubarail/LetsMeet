@@ -20,6 +20,7 @@
 		5D5CF08C24F4FDC20067CDFA /* LetsMeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF08B24F4FDC20067CDFA /* LetsMeetUITests.swift */; };
 		5D5CF09E24F5008D0067CDFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D5CF09D24F5008D0067CDFA /* GoogleService-Info.plist */; };
 		5D5CF0A024F625BF0067CDFA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF09F24F625BF0067CDFA /* RegisterViewController.swift */; };
+		5D5CF0A224F652810067CDFA /* Fuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF0A124F652810067CDFA /* Fuser.swift */; };
 		6F0D5CFAE9A185301D1935A4 /* Pods_LetsMeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65F249EA0215F6E5557CE2F /* Pods_LetsMeetTests.framework */; };
 		DE64A0133B6AAAF6FFAE5E97 /* Pods_LetsMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		5D5CF08D24F4FDC20067CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5CF09D24F5008D0067CDFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D5CF09F24F625BF0067CDFA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5D5CF0A124F652810067CDFA /* Fuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fuser.swift; sourceTree = "<group>"; };
 		6B604C7AEE20DFA3D9E3B0B4 /* Pods-LetsMeet-LetsMeetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet-LetsMeetUITests.release.xcconfig"; path = "Target Support Files/Pods-LetsMeet-LetsMeetUITests/Pods-LetsMeet-LetsMeetUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B01ED6701865583923424271 /* Pods-LetsMeet-LetsMeetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet-LetsMeetUITests.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet-LetsMeetUITests/Pods-LetsMeet-LetsMeetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65F249EA0215F6E5557CE2F /* Pods_LetsMeetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 				5D5CF06624F4FDBF0067CDFA /* SceneDelegate.swift */,
 				5D5CF06824F4FDBF0067CDFA /* WelcomeViewController.swift */,
 				5D5CF09F24F625BF0067CDFA /* RegisterViewController.swift */,
+				5D5CF0A124F652810067CDFA /* Fuser.swift */,
 				5D5CF06A24F4FDBF0067CDFA /* Main.storyboard */,
 				5D5CF06D24F4FDBF0067CDFA /* ContentView.swift */,
 				5D5CF07224F4FDC20067CDFA /* Assets.xcassets */,
@@ -425,6 +428,7 @@
 				5D5CF0A024F625BF0067CDFA /* RegisterViewController.swift in Sources */,
 				5D5CF07124F4FDBF0067CDFA /* LetsMeet.xcdatamodeld in Sources */,
 				5D5CF06724F4FDBF0067CDFA /* SceneDelegate.swift in Sources */,
+				5D5CF0A224F652810067CDFA /* Fuser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

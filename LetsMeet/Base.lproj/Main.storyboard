@@ -170,6 +170,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="Y9e-7G-VSL" id="Itd-pQ-5le"/>
                         <outlet property="emailTextField" destination="WCu-Zt-uYC" id="iuA-jh-oRu"/>
                         <outlet property="passwordTextField" destination="UnB-9K-Di2" id="5eX-eC-CFK"/>
                     </connections>
@@ -340,6 +341,9 @@
                                     <segment title="Male"/>
                                     <segment title="Female"/>
                                 </segments>
+                                <connections>
+                                    <action selector="genderSegmentValueChanged:" destination="33j-xh-eqo" eventType="valueChanged" id="6Ov-4K-2nS"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have anaccount?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDs-BN-Zcp">
                                 <rect key="frame" x="20" y="713" width="206" height="21"/>
@@ -424,6 +428,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="aEF-Ha-M64" id="mzO-0z-3rN"/>
                         <outlet property="cityTextField" destination="2r3-YF-7SS" id="Fcf-js-svK"/>
                         <outlet property="confirmPasswordTextField" destination="hQ0-tP-37Z" id="fFM-DV-DmH"/>
                         <outlet property="dateOfBirthTextField" destination="XpD-y8-ucG" id="Le3-bc-EE4"/>
