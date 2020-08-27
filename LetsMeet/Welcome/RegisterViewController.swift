@@ -39,7 +39,11 @@ class RegisterViewController: UIViewController {
     }
     @IBAction func registerButtonPressed(_ sender: Any) {
         if isTextDataImputed() {
-            registerUser()
+            if passwordTextField.text! == confirmPasswordTextField.text! {
+                registerUser()
+            } else {
+                ProgressHUD.showError("パスワードが一致しません")
+            }
         } else {
             ProgressHUD.showError("すべての項目に入力してください")
         }
@@ -77,8 +81,17 @@ class RegisterViewController: UIViewController {
     
     //MARK: - RegisterUser
     private func registerUser() {
+        
+        ProgressHUD.show()
+        
         Fuser.regiterUserWith(email: emailtextField.text!, password: passwordTextField.text!, userName: usernameTextField.text!, city: cityTextField.text!, isMale: isMale, dateOfBirth: Date(), completion: { error in
-            print("callback")
+            
+            if error == nil {
+                ProgressHUD.showSuccess("登録完了")
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                ProgressHUD.showError(error!.localizedDescription)
+            }
         })
     }
     
