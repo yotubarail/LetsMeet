@@ -45,7 +45,7 @@ class WelcomeViewController: UIViewController {
                 if error != nil {
                     ProgressHUD.showError(error!.localizedDescription)
                 } else if isEmailVerified {
-                    
+                    self.goToApp()
                 } else {
                     ProgressHUD.showError("メールを確認してください")
                 }
@@ -70,6 +70,13 @@ class WelcomeViewController: UIViewController {
     
     private func dismissKeyboard() {
         view.endEditing(false)
+    }
+    
+    //MARK: - Navigation
+    private func goToApp() {
+        let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "MainView") as! UITabBarController
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
     }
 }
 
