@@ -117,7 +117,21 @@ class Fuser: Equatable {
         }
     }
     
-    //MARK -Login
+    //MARK: - Returning current user
+    class func currentID() -> String {
+        return Auth.auth().currentUser!.uid
+    }
+    
+    class func currentUser()-> Fuser? {
+        if Auth.auth().currentUser != nil {
+            if let userDictionary = userDefaults.object(forKey: kCURRENTUSER) {
+                return Fuser(_dictionary: userDictionary as! NSDictionary)
+            }
+        }
+        return nil
+    }
+    
+    //MARK: - Login
     
     class func loginUserWith(email: String, password: String,completion: @escaping(_ error: Error?, _ isEmailVerified: Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
@@ -137,7 +151,7 @@ class Fuser: Equatable {
     
     //MARK: - register
     
-    class func regiterUserWith(email: String, password: String, userName: String, city: String, isMale: Bool, dateOfBirth: Date, completion: @escaping(_ error: Error?) -> Void) {
+    class func registerUserWith(email: String, password: String, userName: String, city: String, isMale: Bool, dateOfBirth: Date, completion: @escaping(_ error: Error?) -> Void) {
         
         Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
            
@@ -145,7 +159,7 @@ class Fuser: Equatable {
             
             if error == nil {
                 authData!.user.sendEmailVerification { error in
-                    print("auth email berification sent", error?.localizedDescription)
+                    print("auth email verification sent", error?.localizedDescription)
                 }
                 if authData?.user != nil {
                     let user = Fuser(_objectId: authData!.user.uid, _email: email, _username: userName, _city: city, _dateOfBirth: dateOfBirth, _isMale: isMale)
@@ -158,7 +172,7 @@ class Fuser: Equatable {
     
     //MARK: - Resend Links
     
-    class func resetPasswordfFor(email: String, completion: @escaping (_ error: Error?) -> Void) {
+    class func resetPasswordFor(email: String, completion: @escaping (_ error: Error?) -> Void) {
         Auth.auth().currentUser?.reload(completion: {(error) in
             Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
                 completion(error)
@@ -169,8 +183,8 @@ class Fuser: Equatable {
     //MARK: - save user funcs
     
     func saveUserLobally() {
-        userDeafults.setValue(self.userDictionary as! [String: Any], forKey: kCURRENTUSER)
-        userDeafults.synchronize()
+        userDefaults.setValue(self.userDictionary as! [String: Any], forKey: kCURRENTUSER)
+        userDefaults.synchronize()
     }
     
     func saveUserToFirestore() {

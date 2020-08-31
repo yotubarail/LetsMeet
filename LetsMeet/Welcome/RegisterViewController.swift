@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
     
     //MARK: - Vars
     var isMale = true
+    var datePicker = UIDatePicker()
     
     
     //MARK: - ViewLifeCycle
@@ -30,6 +31,7 @@ class RegisterViewController: UIViewController {
         overrideUserInterfaceStyle = .dark
         
         setupBackgroundTouch()
+        setupDatePicker()
     }
     
     
@@ -56,8 +58,28 @@ class RegisterViewController: UIViewController {
     }
     
     
-    
     //MARK: - setup
+    private func setupDatePicker() {
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
+        dateOfBirthTextField.inputView  = datePicker
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.tintColor = UIColor().primary()
+        toolBar.sizeToFit()
+        
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissKeyboard))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboard))
+        
+        toolBar.setItems([cancelButton, spaceButton , doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        dateOfBirthTextField.inputAccessoryView = toolBar
+    }
+    
+    
     private func setupBackgroundTouch() {
         backgroundImageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self,action: #selector(backgroundTap))
@@ -70,8 +92,12 @@ class RegisterViewController: UIViewController {
     
     //MARK: - Helpers
     
-    private func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(false)
+    }
+    
+    @objc func handleDatePicker() {
+        dateOfBirthTextField.text = datePicker.date.longDate()
     }
     
     private func isTextDataImputed() -> Bool {
@@ -84,7 +110,7 @@ class RegisterViewController: UIViewController {
         
         ProgressHUD.show()
         
-        Fuser.regiterUserWith(email: emailtextField.text!, password: passwordTextField.text!, userName: usernameTextField.text!, city: cityTextField.text!, isMale: isMale, dateOfBirth: Date(), completion: { error in
+        Fuser.registerUserWith(email: emailtextField.text!, password: passwordTextField.text!, userName: usernameTextField.text!, city: cityTextField.text!, isMale: isMale, dateOfBirth: Date(), completion: { error in
             
             if error == nil {
                 ProgressHUD.showSuccess("登録完了")

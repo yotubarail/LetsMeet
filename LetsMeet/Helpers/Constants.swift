@@ -7,7 +7,7 @@
 
 import Foundation
 
-public let userDeafults = UserDefaults.standard
+public let userDefaults = UserDefaults.standard
 
 //FUser
 public let kOBJECTID = "objectId"
