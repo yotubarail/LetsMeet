@@ -906,12 +906,12 @@
                         <outlet property="cityCountryLabel" destination="3qs-ny-koG" id="Wyh-bj-vbm"/>
                         <outlet property="cityTextField" destination="BFh-og-tgm" id="1lF-g7-V4l"/>
                         <outlet property="countryTextField" destination="kXp-Hr-c9h" id="yBU-yf-QmN"/>
-                        <outlet property="educationTextField" destination="RJl-Ug-ceH" id="O3S-eA-cwA"/>
                         <outlet property="genderTextField" destination="iHo-OA-xin" id="5Y1-eV-QWx"/>
                         <outlet property="heightTextField" destination="0hU-gQ-CCq" id="kpN-Qf-pZz"/>
                         <outlet property="jobTextField" destination="eWw-nu-Yzt" id="hO7-3g-smQ"/>
                         <outlet property="lookingForTextField" destination="Om5-4Z-3CR" id="oaB-Gm-M9I"/>
                         <outlet property="nameAgeLabel" destination="Kg5-Og-jtn" id="KQQ-h4-VJl"/>
+                        <outlet property="professionTextField" destination="RJl-Ug-ceH" id="O3S-eA-cwA"/>
                         <outlet property="profileCellBackgroundView" destination="tQX-Uh-zkU" id="lIk-r6-zYO"/>
                     </connections>
                 </tableViewController>
