@@ -7,7 +7,8 @@
 
 import Foundation
 
-public let userDeafults = UserDefaults.standard
+public let userDefaults = UserDefaults.standard
+public let kFILEREFERENCE = "gs://letsmeet-33269.appspot.com"
 
 //FUser
 public let kOBJECTID = "objectId"

@@ -62,5 +62,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>プロフィール画像更新のため、カメラロールにアクセスします</string>
+	<key>NSCameraUsageDescription</key>
+	<string>プロフィール画像更新のため、カメラを起動します</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>プロフィール画像更新のため、メディアライブラリにアクセスします</string>
 </dict>
 </plist>

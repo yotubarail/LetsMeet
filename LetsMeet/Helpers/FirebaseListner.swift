@@ -27,7 +27,7 @@ class FirebaseListner {
                 user.saveUserLobally()
             } else {
                 // first Login
-                if let user = userDeafults.object(forKey: kCURRENTUSER) {
+                if let user = userDefaults.object(forKey: kCURRENTUSER) {
                     Fuser(_dictionary: user as! NSDictionary).saveUserToFirestore()
                 }
             }

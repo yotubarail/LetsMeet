@@ -27,7 +27,7 @@ class WelcomeViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
         if emailTextField.text != "" {
-            Fuser.resetPasswordfFor(email: emailTextField.text!) { error in
+            Fuser.resetPasswordFor(email: emailTextField.text!) { error in
                 if error != nil {
                     ProgressHUD.showError(error!.localizedDescription)
                 } else {
@@ -41,10 +41,12 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" {
+            ProgressHUD.show()
             Fuser.loginUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error, isEmailVerified) in
                 if error != nil {
                     ProgressHUD.showError(error!.localizedDescription)
                 } else if isEmailVerified {
+                    ProgressHUD.dismiss()
                     self.goToApp()
                 } else {
                     ProgressHUD.showError("メールを確認してください")
