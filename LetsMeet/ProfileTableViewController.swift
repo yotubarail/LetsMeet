@@ -13,7 +13,7 @@ class ProfileTableViewController: UITableViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var profileCellBackgroundView: UIView!
-    @IBOutlet weak var avatarPicture: UIImageView!
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameAgeLabel: UILabel!
     @IBOutlet weak var cityCountryLabel: UILabel!
     @IBOutlet weak var aboutMeTextView: UITextView!
@@ -31,6 +31,8 @@ class ProfileTableViewController: UITableViewController {
     var uploadingAvatar = true
     var avatarImage: UIImage?
     var garelly: GalleryController!
+    
+    var alertTextField: UITextField!
     
     //MARK: - ViewLifeCycle
     override func viewDidLoad() {
@@ -115,6 +117,10 @@ class ProfileTableViewController: UITableViewController {
     //MARK: - Load UserData
     private func loadUserData() {
         let currrentUser = Fuser.currentUser()!
+        
+        FileStorage.downloadImage(imageUrl: currrentUser.avatarLink) {(image) in
+            
+        }
         nameAgeLabel.text = currrentUser.username + ", \(abs(currrentUser.dateOfBirth.interval(ofComponent: .year, fromDate: Date())))"
         cityCountryLabel.text = currrentUser.country + ", " + currrentUser.city
         aboutMeTextView.text = currrentUser.about != "" ? currrentUser.about : "A little bit about me..."
@@ -125,9 +131,9 @@ class ProfileTableViewController: UITableViewController {
         countryTextField.text = currrentUser.country
         heightTextField.text = "\(currrentUser.height)"
         lookingForTextField.text = currrentUser.lookingFor
-        avatarPicture.image = UIImage(named: "avatar")
+        avatarImageView.image = UIImage(named: "avatar")
         
-        //TODO - set avatarPicture
+        avatarImageView.image = currrentUser.avatar
     }
     
     //MARK: - Editing Mode
@@ -157,12 +163,19 @@ class ProfileTableViewController: UITableViewController {
         let fileDirectory = "Avatars/_" + Fuser.currentID() + ".jpg"
         FileStorage.uploadImage(image, directory: fileDirectory) {(avatarLink) in
             ProgressHUD.dismiss()
+            FileStorage.saveImageLocally(imageData: image.jpegData(compressionQuality: 0.8)! as NSData, fileName: Fuser.currentID())
             completion(avatarLink)
         }
     }
     
     private func uploadImages(images:[UIImage?]) {
         ProgressHUD.show()
+        FileStorage.uploadImages(images) { (imageLinks) in
+            ProgressHUD.dismiss()
+            let currentUser = Fuser.currentUser()!
+            currentUser.imageLinks = imageLinks
+            self.saveUserData(user: currentUser)
+        }
     }
     
     //MARK: - Garally
@@ -194,10 +207,10 @@ class ProfileTableViewController: UITableViewController {
     private func showEditOptions() {
         let alertController = UIAlertController(title: "アカウント情報の変更", message: "アカウント情報を変えられます", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "メールアドレスを変更", style: .default, handler: {(alert) in
-            print("Change Email")
+            self.showChangeField(value: "Email")
         }))
         alertController.addAction(UIAlertAction(title: "名前を変更", style: .default, handler: {(alert) in
-            print("Name")
+            self.showChangeField(value: "Name")
         }))
         alertController.addAction(UIAlertAction(title: "ログアウト", style: .destructive, handler: {(alert) in
             print("ログアウト")
@@ -206,7 +219,49 @@ class ProfileTableViewController: UITableViewController {
 
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
+    private func showChangeField(value: String) {
+        let alertView = UIAlertController(title: "Uploading\(value)", message: "Please write your \(value)", preferredStyle: .alert)
+        alertView.addTextField{ (textField) in
+            self.alertTextField = textField
+            self.alertTextField.placeholder = "New \(value)"
+            }
+        alertView.addAction(UIAlertAction(title: "Update", style: .destructive, handler: { (action) in
+            self.updateUserWith(value: value)
+        }))
+        alertView.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
+    //MARK: - Change user info
+    private func updateUserWith(value: String) {
+        if alertTextField.text != "" {
+            value == "Email" ? changeEmail() : changeUserName()
+        } else {
+            ProgressHUD.showError("\(value) is empty")
+        }
+    }
+    
+    private func changeEmail() {
+        Fuser.currentUser()?.updateUserEmail(newEmail: alertTextField.text!, completion: {(error) in
+            if error == nil {
+                if let currentUser = Fuser.currentUser() {
+                    currentUser.email = self.alertTextField.text!
+                    self.saveUserData(user: currentUser)                }
+                ProgressHUD.showSuccess("Success!")
+            } else {
+                ProgressHUD.showError(error!.localizedDescription)
+            }
+        })
+    }
+    
+    private func changeUserName() {
+        if let currentUser = Fuser.currentUser() {
+            currentUser.username = alertTextField.text!
+            saveUserData(user: currentUser)
+            loadUserData()
+        }
+    }
 }
 
 extension ProfileTableViewController: GalleryControllerDelegate {
@@ -217,7 +272,7 @@ extension ProfileTableViewController: GalleryControllerDelegate {
                     if icon != nil {
                         self.editingMode = true
                         self.showSaveButton()
-                        self.avatarPicture.image = icon
+                        self.avatarImageView.image = icon
                         self.avatarImage = icon
                         
                     } else {

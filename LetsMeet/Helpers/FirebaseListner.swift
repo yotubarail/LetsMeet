@@ -25,6 +25,10 @@ class FirebaseListner {
             if snapshot.exists {
                 let user = Fuser(_dictionary: snapshot.data() as! NSDictionary)
                 user.saveUserLobally()
+                user.getUserAvatarFromFirebase { (didset) in
+                    
+                }
+                
             } else {
                 // first Login
                 if let user = userDefaults.object(forKey: kCURRENTUSER) {
