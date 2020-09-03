@@ -100,7 +100,7 @@ class Fuser: Equatable {
         
         isMale = _dictionary[kISMALE] as? Bool ?? true
         profession = _dictionary[kPROFESSION] as? String ?? ""
-        jobTitle = _dictionary[kOBJECTID] as? String ?? ""
+        jobTitle = _dictionary[kJOBTITLE] as? String ?? ""
         about = _dictionary[kABOUT] as? String ?? ""
         city = _dictionary[kCITY] as? String ?? ""
         country = _dictionary[kCOUNTRY] as? String ?? ""
@@ -115,6 +115,8 @@ class Fuser: Equatable {
         } else {
             dateOfBirth = _dictionary[kDATEOFBIRTH] as? Date ?? Date()
         }
+        let placeHolder = isMale ? "mPlaceholder" : "fPlaceholder"
+        avatar = UIImage(contentsOfFile: fileInDocumentDirectory(filename: self.objectId)) ?? UIImage(named: placeHolder)
     }
     
     //MARK: - Returning current user
@@ -129,6 +131,14 @@ class Fuser: Equatable {
             }
         }
         return nil
+    }
+    
+    func getUserAvatarFromFirebase(completion: @escaping (_ didset: Bool) -> Void) {
+        FileStorage.downloadImage(imageUrl: self.avatarLink) { (avatarImage) in
+            let placeHolder = self.isMale ? "mPlaceholder" : "fPlaceholder"
+            self.avatar = avatarImage ?? UIImage(named: placeHolder)
+            completion(true)
+        }
     }
     
     //MARK: - Login
@@ -168,6 +178,13 @@ class Fuser: Equatable {
                 }
             }
         }
+    }
+    
+    //MARK: - Edit User profile
+    func updateUserEmail(newEmail: String, completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().currentUser?.updateEmail(to: newEmail, completion: { (error) in
+            completion(error)
+        })
     }
     
     //MARK: - Resend Links
