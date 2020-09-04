@@ -441,17 +441,17 @@
             </objects>
             <point key="canvasLocation" x="957.60000000000002" y="97.536945812807886"/>
         </scene>
-        <!--View Controller-->
+        <!--Let's Meet-->
         <scene sceneID="bg5-up-msg">
             <objects>
-                <viewController id="jjo-10-ois" sceneMemberID="viewController">
+                <viewController id="jjo-10-ois" customClass="CardViewController" customModule="LetsMeet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qh7-24-kSe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6lB-aa-rRb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="foM-hA-wRE"/>
+                    <navigationItem key="navigationItem" title="Let's Meet" id="foM-hA-wRE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="era-Qb-y4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -475,11 +475,11 @@
             </objects>
             <point key="canvasLocation" x="1881" y="98"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="X4n-JC-4qR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sAR-ld-RW0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="t0S-K9-h60"/>
+                    <tabBarItem key="tabBarItem" title="" image="smiley.fill" catalog="system" id="t0S-K9-h60"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="akk-43-qf1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -930,5 +930,6 @@
         <image name="loginBavkground" width="375" height="812"/>
         <image name="settings" width="80" height="80"/>
         <image name="signin" width="316" height="55"/>
+        <image name="smiley.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
