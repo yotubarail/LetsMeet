@@ -27,7 +27,7 @@ class WelcomeViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
         if emailTextField.text != "" {
-            Fuser.resetPasswordFor(email: emailTextField.text!) { error in
+            Fuser.resetPassword(email: emailTextField.text!) { (error) in
                 if error != nil {
                     ProgressHUD.showError(error!.localizedDescription)
                 } else {

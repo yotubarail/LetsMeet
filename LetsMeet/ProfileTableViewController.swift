@@ -131,9 +131,9 @@ class ProfileTableViewController: UITableViewController {
         countryTextField.text = currrentUser.country
         heightTextField.text = "\(currrentUser.height)"
         lookingForTextField.text = currrentUser.lookingFor
-        avatarImageView.image = UIImage(named: "avatar")
+        avatarImageView.image = UIImage(named: "avatar")?.circleMasked
         
-        avatarImageView.image = currrentUser.avatar
+        avatarImageView.image = currrentUser.avatar?.circleMasked
     }
     
     //MARK: - Editing Mode
@@ -213,7 +213,7 @@ class ProfileTableViewController: UITableViewController {
             self.showChangeField(value: "Name")
         }))
         alertController.addAction(UIAlertAction(title: "ログアウト", style: .destructive, handler: {(alert) in
-            print("ログアウト")
+            self.logoutUser()
         }))
         alertController.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
 
@@ -262,6 +262,20 @@ class ProfileTableViewController: UITableViewController {
             loadUserData()
         }
     }
+    
+    private func logoutUser() {
+        Fuser.logoutCurrentUser { (error) in
+            if error == nil {
+                let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+                DispatchQueue.main.async {
+                    loginView.modalPresentationStyle = .fullScreen
+                    self.present(loginView, animated: true, completion: nil)
+                }
+            } else {
+                ProgressHUD.showError(error!.localizedDescription)
+            }
+        }
+    }
 }
 
 extension ProfileTableViewController: GalleryControllerDelegate {
@@ -272,7 +286,7 @@ extension ProfileTableViewController: GalleryControllerDelegate {
                     if icon != nil {
                         self.editingMode = true
                         self.showSaveButton()
-                        self.avatarImageView.image = icon
+                        self.avatarImageView.image = icon?.circleMasked
                         self.avatarImage = icon
                         
                     } else {

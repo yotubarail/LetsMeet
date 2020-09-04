@@ -183,18 +183,41 @@ class Fuser: Equatable {
     //MARK: - Edit User profile
     func updateUserEmail(newEmail: String, completion: @escaping (_ error: Error?) -> Void) {
         Auth.auth().currentUser?.updateEmail(to: newEmail, completion: { (error) in
+            Fuser.resendVerificationEmail(email: newEmail) { (error) in
+                
+                }
             completion(error)
         })
     }
     
     //MARK: - Resend Links
     
-    class func resetPasswordFor(email: String, completion: @escaping (_ error: Error?) -> Void) {
+    class func resendVerificationEmail(email: String, completion: @escaping (_ error: Error?) -> Void) {
         Auth.auth().currentUser?.reload(completion: {(error) in
             Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
                 completion(error)
             })
         })
+    }
+    
+    class func resetPassword(email: String, completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) {(error) in
+            completion(error)
+        }
+    }
+    
+    //MARK: - logout currentuser
+    class func logoutCurrentUser(completion: @escaping (_ error: Error? ) -> Void) {
+        
+        do {
+            try Auth.auth().signOut()
+            userDefaults.removeObject(forKey: kCURRENTUSER)
+            userDefaults.synchronize()
+            completion(nil)
+        } catch let error as NSError {
+            completion(error)
+        }
+            
     }
     
     //MARK: - save user funcs
