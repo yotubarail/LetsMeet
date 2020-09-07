@@ -8,9 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		50F976B72B81579B3DC9C16F /* Pods_LetsMeet_LetsMeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1189429856C8BB0EF76E879E /* Pods_LetsMeet_LetsMeetUITests.framework */; };
+		5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */; };
 		5D48FFAD24F77523006F2B98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFAC24F77523006F2B98 /* Constants.swift */; };
 		5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */; };
 		5D48FFB424F7922B006F2B98 /* FirebaseListner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */; };
+		5D4EEB2D25020691002DBF3C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEB2C25020691002DBF3C /* CardViewController.swift */; };
+		5D4EEB3125021784002DBF3C /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEB3025021784002DBF3C /* UserCard.swift */; };
+		5D4EEB35250217F0002DBF3C /* Pods_LetsMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4EEB34250217F0002DBF3C /* Pods_LetsMeet.framework */; };
+		5D4EEB3825021D00002DBF3C /* UserCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEB3725021D00002DBF3C /* UserCardModel.swift */; };
+		5D4EEB3A25021D8B002DBF3C /* UserCardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEB3925021D8B002DBF3C /* UserCardOverlay.swift */; };
+		5D4EEB3C25022AB3002DBF3C /* UserCardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEB3B25022AB3002DBF3C /* UserCardContentView.swift */; };
 		5D5CF06524F4FDBF0067CDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF06424F4FDBF0067CDFA /* AppDelegate.swift */; };
 		5D5CF06724F4FDBF0067CDFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF06624F4FDBF0067CDFA /* SceneDelegate.swift */; };
 		5D5CF06924F4FDBF0067CDFA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CF06824F4FDBF0067CDFA /* WelcomeViewController.swift */; };
@@ -27,7 +34,6 @@
 		5DCD6C6424FCC32800FF3948 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD6C6324FCC32800FF3948 /* ProfileTableViewController.swift */; };
 		5DCD6C6624FE231E00FF3948 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD6C6524FE231D00FF3948 /* FileStorage.swift */; };
 		6F0D5CFAE9A185301D1935A4 /* Pods_LetsMeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65F249EA0215F6E5557CE2F /* Pods_LetsMeetTests.framework */; };
-		DE64A0133B6AAAF6FFAE5E97 /* Pods_LetsMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +59,17 @@
 		201890D85C33A0793EDB4B61 /* Pods-LetsMeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeetTests.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeetTests/Pods-LetsMeetTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2215C8D1A20181AB90410A26 /* Pods-LetsMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardFooterView.swift; sourceTree = "<group>"; };
 		5D48FFAC24F77523006F2B98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseListner.swift; sourceTree = "<group>"; };
+		5D4EEB2C25020691002DBF3C /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		5D4EEB3025021784002DBF3C /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		5D4EEB32250217BD002DBF3C /* Shuffle_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shuffle_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4EEB34250217F0002DBF3C /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4EEB3725021D00002DBF3C /* UserCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardModel.swift; sourceTree = "<group>"; };
+		5D4EEB3925021D8B002DBF3C /* UserCardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardOverlay.swift; sourceTree = "<group>"; };
+		5D4EEB3B25022AB3002DBF3C /* UserCardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardContentView.swift; sourceTree = "<group>"; };
 		5D5CF06124F4FDBF0067CDFA /* LetsMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5CF06424F4FDBF0067CDFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D5CF06624F4FDBF0067CDFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE64A0133B6AAAF6FFAE5E97 /* Pods_LetsMeet.framework in Frameworks */,
+				5D4EEB35250217F0002DBF3C /* Pods_LetsMeet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +128,8 @@
 		3C14EABDB48A26762543CA09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D4EEB34250217F0002DBF3C /* Pods_LetsMeet.framework */,
+				5D4EEB32250217BD002DBF3C /* Shuffle_iOS.framework */,
 				5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */,
 				1189429856C8BB0EF76E879E /* Pods_LetsMeet_LetsMeetUITests.framework */,
 				C65F249EA0215F6E5557CE2F /* Pods_LetsMeetTests.framework */,
@@ -125,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5CF0A124F652810067CDFA /* Fuser.swift */,
+				5D4EEB3625021CC3002DBF3C /* CardViews */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,8 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				5D48FFAC24F77523006F2B98 /* Constants.swift */,
-				5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */,
-				5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */,
 				5DCD6C6124FC9A1E00FF3948 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -147,6 +162,37 @@
 				5D5CF09F24F625BF0067CDFA /* RegisterViewController.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		5D4EEB2E25021707002DBF3C /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				5DCD6C6324FCC32800FF3948 /* ProfileTableViewController.swift */,
+				5D4EEB2C25020691002DBF3C /* CardViewController.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		5D4EEB2F2502173D002DBF3C /* FirebeseHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */,
+				5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */,
+				5DCD6C6524FE231D00FF3948 /* FileStorage.swift */,
+			);
+			path = FirebeseHelpers;
+			sourceTree = "<group>";
+		};
+		5D4EEB3625021CC3002DBF3C /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				5D4EEB3025021784002DBF3C /* UserCard.swift */,
+				5D4EEB3725021D00002DBF3C /* UserCardModel.swift */,
+				5D4EEB3925021D8B002DBF3C /* UserCardOverlay.swift */,
+				5D4EEB3B25022AB3002DBF3C /* UserCardContentView.swift */,
+				5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */,
+			);
+			path = CardViews;
 			sourceTree = "<group>";
 		};
 		5D5CF05824F4FDBF0067CDFA = {
@@ -176,10 +222,10 @@
 			children = (
 				5D5CF06424F4FDBF0067CDFA /* AppDelegate.swift */,
 				5D5CF06624F4FDBF0067CDFA /* SceneDelegate.swift */,
-				5DCD6C6324FCC32800FF3948 /* ProfileTableViewController.swift */,
-				5DCD6C6524FE231D00FF3948 /* FileStorage.swift */,
+				5D4EEB2E25021707002DBF3C /* MainViews */,
 				5D48FFB024F78079006F2B98 /* Welcome */,
 				5D48FFAE24F78042006F2B98 /* Model */,
+				5D4EEB2F2502173D002DBF3C /* FirebeseHelpers */,
 				5D48FFAF24F7805D006F2B98 /* Helpers */,
 				5D5CF06A24F4FDBF0067CDFA /* Main.storyboard */,
 				5D5CF07224F4FDC20067CDFA /* Assets.xcassets */,
@@ -463,15 +509,21 @@
 			files = (
 				5D48FFB424F7922B006F2B98 /* FirebaseListner.swift in Sources */,
 				5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */,
+				5D4EEB3825021D00002DBF3C /* UserCardModel.swift in Sources */,
 				5D5CF06924F4FDBF0067CDFA /* WelcomeViewController.swift in Sources */,
 				5D5CF06524F4FDBF0067CDFA /* AppDelegate.swift in Sources */,
 				5D5CF0A024F625BF0067CDFA /* RegisterViewController.swift in Sources */,
+				5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */,
 				5DCD6C6624FE231E00FF3948 /* FileStorage.swift in Sources */,
 				5DCD6C6224FC9A1E00FF3948 /* Extensions.swift in Sources */,
 				5D5CF07124F4FDBF0067CDFA /* LetsMeet.xcdatamodeld in Sources */,
+				5D4EEB3C25022AB3002DBF3C /* UserCardContentView.swift in Sources */,
 				5D5CF06724F4FDBF0067CDFA /* SceneDelegate.swift in Sources */,
 				5D5CF0A224F652810067CDFA /* Fuser.swift in Sources */,
+				5D4EEB3A25021D8B002DBF3C /* UserCardOverlay.swift in Sources */,
+				5D4EEB2D25020691002DBF3C /* CardViewController.swift in Sources */,
 				5DCD6C6424FCC32800FF3948 /* ProfileTableViewController.swift in Sources */,
+				5D4EEB3125021784002DBF3C /* UserCard.swift in Sources */,
 				5D48FFAD24F77523006F2B98 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
