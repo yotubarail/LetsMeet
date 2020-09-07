@@ -10,8 +10,8 @@ import Shuffle_iOS
 
 class UserCard: SwipeCard {
     
-    private func configure(withmodel model: UserCardModel) {
+    func configure(withModel model: UserCardModel) {
         content = UserCardContentView(withImage: model.image)
-        footer = UserCardFooterView(title: "\(model.name), \(model.age)", subtitle: model.occupation)
+        footer = UserCardFooterView(withTitle: "\(model.name), \(model.age)", subtitle: model.occupation)
     }
 }

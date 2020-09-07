@@ -40,7 +40,7 @@ class UserCardOverlay: UIView {
         let rightTextview = SampleOverlayLabelView(title: "好き", color: .sampleGreen, rotation: -CGFloat.pi / 10)
         addSubview(rightTextview)
         rightTextview.anchor(top: topAnchor,
-                            right: rightAnchor,
+                            left: leftAnchor,
                             paddingTop: 30,
                             paddingRight: 14)
     }

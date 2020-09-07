@@ -92,7 +92,7 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func saveUserData(user: Fuser) {
-        user.saveUserLobally()
+        user.saveUserLocally()
         user.saveUserToFirestore()
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50F976B72B81579B3DC9C16F /* Pods_LetsMeet_LetsMeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1189429856C8BB0EF76E879E /* Pods_LetsMeet_LetsMeetUITests.framework */; };
+		5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */; };
 		5D48FFAD24F77523006F2B98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFAC24F77523006F2B98 /* Constants.swift */; };
 		5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */; };
 		5D48FFB424F7922B006F2B98 /* FirebaseListner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */; };
@@ -58,6 +59,7 @@
 		201890D85C33A0793EDB4B61 /* Pods-LetsMeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeetTests.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeetTests/Pods-LetsMeetTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2215C8D1A20181AB90410A26 /* Pods-LetsMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardFooterView.swift; sourceTree = "<group>"; };
 		5D48FFAC24F77523006F2B98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseListner.swift; sourceTree = "<group>"; };
@@ -148,8 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				5D48FFAC24F77523006F2B98 /* Constants.swift */,
-				5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */,
-				5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */,
 				5DCD6C6124FC9A1E00FF3948 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -176,6 +176,8 @@
 		5D4EEB2F2502173D002DBF3C /* FirebeseHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */,
+				5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */,
 				5DCD6C6524FE231D00FF3948 /* FileStorage.swift */,
 			);
 			path = FirebeseHelpers;
@@ -188,6 +190,7 @@
 				5D4EEB3725021D00002DBF3C /* UserCardModel.swift */,
 				5D4EEB3925021D8B002DBF3C /* UserCardOverlay.swift */,
 				5D4EEB3B25022AB3002DBF3C /* UserCardContentView.swift */,
+				5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				5D5CF06924F4FDBF0067CDFA /* WelcomeViewController.swift in Sources */,
 				5D5CF06524F4FDBF0067CDFA /* AppDelegate.swift in Sources */,
 				5D5CF0A024F625BF0067CDFA /* RegisterViewController.swift in Sources */,
+				5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */,
 				5DCD6C6624FE231E00FF3948 /* FileStorage.swift in Sources */,
 				5DCD6C6224FC9A1E00FF3948 /* Extensions.swift in Sources */,
 				5D5CF07124F4FDBF0067CDFA /* LetsMeet.xcdatamodeld in Sources */,

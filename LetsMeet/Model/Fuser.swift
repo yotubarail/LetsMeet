@@ -174,7 +174,7 @@ class Fuser: Equatable {
                 if authData?.user != nil {
                     let user = Fuser(_objectId: authData!.user.uid, _email: email, _username: userName, _city: city, _dateOfBirth: dateOfBirth, _isMale: isMale)
                     
-                    user.saveUserLobally()
+                    user.saveUserLocally()
                 }
             }
         }
@@ -222,7 +222,7 @@ class Fuser: Equatable {
     
     //MARK: - save user funcs
     
-    func saveUserLobally() {
+    func saveUserLocally() {
         userDefaults.setValue(self.userDictionary as! [String: Any], forKey: kCURRENTUSER)
         userDefaults.synchronize()
     }
@@ -232,6 +232,29 @@ class Fuser: Equatable {
             if error != nil {
                 print(error!.localizedDescription)
             }
+        }
+    }
+}
+
+func createUsers() {
+    let names = ["gseijoij", "sample", "太郎"]
+    var imageIndex = 1
+    var userIndex = 1
+    var isMale = true
+    
+    for i in 0..<3 {
+        let id = UUID().uuidString
+        let fileDirectory = "Avatars/_" + id + ".jpg"
+        FileStorage.uploadImage(UIImage(named: "user\(imageIndex)")!, directory: fileDirectory) { (avatarLink) in
+            let user = Fuser(_objectId: id, _email: "user\(userIndex)@mail.com", _username: names[i], _city: "NO City", _dateOfBirth: Date(), _isMale: true, _avatarLink: avatarLink ?? "")
+            
+            isMale.toggle()
+            userIndex += 1
+            user.saveUserToFirestore()
+        }
+        imageIndex += 1
+        if imageIndex == 16 {
+            imageIndex = 1
         }
     }
 }

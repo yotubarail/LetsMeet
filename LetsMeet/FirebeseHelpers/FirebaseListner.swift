@@ -1,0 +1,79 @@
+//
+//  FirebaseListner.swift
+//  LetsMeet
+//
+//  Created by 滝浪翔太 on 2020/08/27.
+//
+
+import Foundation
+import Firebase
+
+
+class FirebaseListner {
+    static let shared = FirebaseListner()
+    
+    private init() {
+        
+    }
+    
+    //MARK: - FUser
+    func downloadCurrentUserFromFirebase(userId: String, email: String) {
+        FirebaseReference(.User).document(userId).getDocument{(snapshot, error) in
+            guard let snapshot = snapshot else {
+                return
+            }
+            if snapshot.exists {
+                let user = Fuser(_dictionary: snapshot.data() as! NSDictionary)
+                user.saveUserLocally()
+                user.getUserAvatarFromFirebase { (didset) in
+                    
+                }
+                
+            } else {
+                // first Login
+                if let user = userDefaults.object(forKey: kCURRENTUSER) {
+                    Fuser(_dictionary: user as! NSDictionary).saveUserToFirestore()
+                }
+            }
+        }
+    }
+
+    func downloadUsersFromFirebase(isInitialLoad: Bool, limit: Int, lastDocumentSnapshot: DocumentSnapshot?, completion: @escaping (_ users: [Fuser], _ snapshot: DocumentSnapshot?) -> Void) {
+        
+        var query: Query!
+        var users: [Fuser] = []
+        
+        if isInitialLoad {
+            query = FirebaseReference(.User).order(by: kREGISTEREDDATE, descending: false).limit(to: limit)
+            print("first\(limit)")
+        } else {
+            if lastDocumentSnapshot != nil {
+                query = FirebaseReference(.User).order(by: kREGISTEREDDATE, descending: false).limit(to: limit).start(afterDocument: lastDocumentSnapshot!)
+                print("next \(limit) user loading")
+            } else {
+                print("lastsnapshot is nil")
+            }
+        }
+        if query != nil {
+            query.getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot else {return}
+                
+                if !snapshot.isEmpty {
+                    for userData in snapshot.documents {
+                        let userObject = userData.data() as NSDictionary
+                        
+                        if !(Fuser.currentUser()?.likedIdArray?.contains(userObject [kOBJECTID] as! String) ?? false) && Fuser.currentID() != userObject[kOBJECTID] as! String{
+                            users.append(Fuser(_dictionary: userObject))
+                        }
+                    }
+                    completion(users, snapshot.documents.last!)
+                } else {
+                    print("no more users to fetch")
+                    completion(users, nil)
+                }
+            }
+        } else {
+            completion(users, nil)
+        }
+    }
+}
