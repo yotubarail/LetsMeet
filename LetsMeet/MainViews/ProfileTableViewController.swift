@@ -42,7 +42,7 @@ class ProfileTableViewController: UITableViewController {
         
         setupBackgrounds()
         
-        if Fuser.currentUser() != nil {
+        if FUser.currentUser() != nil {
             loadUserData()
         }
         updateEditingMode()
@@ -64,7 +64,7 @@ class ProfileTableViewController: UITableViewController {
     }
     
     @objc func editUserData() {
-        let user = Fuser.currentUser()!
+        let user = FUser.currentUser()!
         user.about = aboutMeTextView.text
         user.jobTitle = jobTextField.text ?? ""
         user.profession = professionTextField.text ?? ""
@@ -91,7 +91,7 @@ class ProfileTableViewController: UITableViewController {
         showSaveButton()
     }
     
-    private func saveUserData(user: Fuser) {
+    private func saveUserData(user: FUser) {
         user.saveUserLocally()
         user.saveUserToFirestore()
     }
@@ -116,7 +116,7 @@ class ProfileTableViewController: UITableViewController {
     
     //MARK: - Load UserData
     private func loadUserData() {
-        let currrentUser = Fuser.currentUser()!
+        let currrentUser = FUser.currentUser()!
         
         FileStorage.downloadImage(imageUrl: currrentUser.avatarLink) {(image) in
             
@@ -160,10 +160,10 @@ class ProfileTableViewController: UITableViewController {
     //MARK: - FileStorage
     private func uploadAvatar(_ image: UIImage, completion: @escaping (_ avatarLink: String?) -> Void) {
         ProgressHUD.show()
-        let fileDirectory = "Avatars/_" + Fuser.currentID() + ".jpg"
+        let fileDirectory = "Avatars/_" + FUser.currentID() + ".jpg"
         FileStorage.uploadImage(image, directory: fileDirectory) {(avatarLink) in
             ProgressHUD.dismiss()
-            FileStorage.saveImageLocally(imageData: image.jpegData(compressionQuality: 0.8)! as NSData, fileName: Fuser.currentID())
+            FileStorage.saveImageLocally(imageData: image.jpegData(compressionQuality: 0.8)! as NSData, fileName: FUser.currentID())
             completion(avatarLink)
         }
     }
@@ -172,7 +172,7 @@ class ProfileTableViewController: UITableViewController {
         ProgressHUD.show()
         FileStorage.uploadImages(images) { (imageLinks) in
             ProgressHUD.dismiss()
-            let currentUser = Fuser.currentUser()!
+            let currentUser = FUser.currentUser()!
             currentUser.imageLinks = imageLinks
             self.saveUserData(user: currentUser)
         }
@@ -243,9 +243,9 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func changeEmail() {
-        Fuser.currentUser()?.updateUserEmail(newEmail: alertTextField.text!, completion: {(error) in
+        FUser.currentUser()?.updateUserEmail(newEmail: alertTextField.text!, completion: {(error) in
             if error == nil {
-                if let currentUser = Fuser.currentUser() {
+                if let currentUser = FUser.currentUser() {
                     currentUser.email = self.alertTextField.text!
                     self.saveUserData(user: currentUser)                }
                 ProgressHUD.showSuccess("Success!")
@@ -256,7 +256,7 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func changeUserName() {
-        if let currentUser = Fuser.currentUser() {
+        if let currentUser = FUser.currentUser() {
             currentUser.username = alertTextField.text!
             saveUserData(user: currentUser)
             loadUserData()
@@ -264,7 +264,7 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func logoutUser() {
-        Fuser.logoutCurrentUser { (error) in
+        FUser.logoutCurrentUser { (error) in
             if error == nil {
                 let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
                 DispatchQueue.main.async {

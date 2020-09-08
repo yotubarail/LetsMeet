@@ -110,7 +110,7 @@ class RegisterViewController: UIViewController {
         
         ProgressHUD.show()
         
-        Fuser.registerUserWith(email: emailtextField.text!, password: passwordTextField.text!, userName: usernameTextField.text!, city: cityTextField.text!, isMale: isMale, dateOfBirth: Date(), completion: { error in
+        FUser.registerUserWith(email: emailtextField.text!, password: passwordTextField.text!, userName: usernameTextField.text!, city: cityTextField.text!, isMale: isMale, dateOfBirth: Date(), completion: { error in
             
             if error == nil {
                 ProgressHUD.showSuccess("登録完了")
