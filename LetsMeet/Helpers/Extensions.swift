@@ -84,7 +84,7 @@ extension NSAttributedString.Key {
     }()
     
     static var titleAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont(name: "ArialRoundedMTBold", size: 24)!,
+        NSAttributedString.Key.font: UIFont(name: "ArialRoundedMTBold", size: 25)!,
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.shadow: NSAttributedString.Key.shadowAttribute
     ]

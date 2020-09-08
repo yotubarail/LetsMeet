@@ -9,8 +9,8 @@ import Foundation
 import Firebase
 import UIKit
 
-class Fuser: Equatable {
-    static func == (lhs: Fuser, rhs: Fuser) -> Bool {
+class FUser: Equatable {
+    static func == (lhs: FUser, rhs: FUser) -> Bool {
         lhs.objectId == rhs.objectId
     }
     
@@ -124,10 +124,10 @@ class Fuser: Equatable {
         return Auth.auth().currentUser!.uid
     }
     
-    class func currentUser()-> Fuser? {
+    class func currentUser()-> FUser? {
         if Auth.auth().currentUser != nil {
             if let userDictionary = userDefaults.object(forKey: kCURRENTUSER) {
-                return Fuser(_dictionary: userDictionary as! NSDictionary)
+                return FUser(_dictionary: userDictionary as! NSDictionary)
             }
         }
         return nil
@@ -172,7 +172,7 @@ class Fuser: Equatable {
                     print("auth email verification sent", error?.localizedDescription)
                 }
                 if authData?.user != nil {
-                    let user = Fuser(_objectId: authData!.user.uid, _email: email, _username: userName, _city: city, _dateOfBirth: dateOfBirth, _isMale: isMale)
+                    let user = FUser(_objectId: authData!.user.uid, _email: email, _username: userName, _city: city, _dateOfBirth: dateOfBirth, _isMale: isMale)
                     
                     user.saveUserLocally()
                 }
@@ -183,7 +183,7 @@ class Fuser: Equatable {
     //MARK: - Edit User profile
     func updateUserEmail(newEmail: String, completion: @escaping (_ error: Error?) -> Void) {
         Auth.auth().currentUser?.updateEmail(to: newEmail, completion: { (error) in
-            Fuser.resendVerificationEmail(email: newEmail) { (error) in
+            FUser.resendVerificationEmail(email: newEmail) { (error) in
                 
                 }
             completion(error)
@@ -246,7 +246,7 @@ func createUsers() {
         let id = UUID().uuidString
         let fileDirectory = "Avatars/_" + id + ".jpg"
         FileStorage.uploadImage(UIImage(named: "user\(imageIndex)")!, directory: fileDirectory) { (avatarLink) in
-            let user = Fuser(_objectId: id, _email: "user\(userIndex)@mail.com", _username: names[i], _city: "NO City", _dateOfBirth: Date(), _isMale: true, _avatarLink: avatarLink ?? "")
+            let user = FUser(_objectId: id, _email: "user\(userIndex)@mail.com", _username: names[i], _city: "NO City", _dateOfBirth: Date(), _isMale: true, _avatarLink: avatarLink ?? "")
             
             isMale.toggle()
             userIndex += 1

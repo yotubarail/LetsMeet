@@ -23,7 +23,7 @@ class FirebaseListner {
                 return
             }
             if snapshot.exists {
-                let user = Fuser(_dictionary: snapshot.data() as! NSDictionary)
+                let user = FUser(_dictionary: snapshot.data() as! NSDictionary)
                 user.saveUserLocally()
                 user.getUserAvatarFromFirebase { (didset) in
                     
@@ -32,16 +32,16 @@ class FirebaseListner {
             } else {
                 // first Login
                 if let user = userDefaults.object(forKey: kCURRENTUSER) {
-                    Fuser(_dictionary: user as! NSDictionary).saveUserToFirestore()
+                    FUser(_dictionary: user as! NSDictionary).saveUserToFirestore()
                 }
             }
         }
     }
 
-    func downloadUsersFromFirebase(isInitialLoad: Bool, limit: Int, lastDocumentSnapshot: DocumentSnapshot?, completion: @escaping (_ users: [Fuser], _ snapshot: DocumentSnapshot?) -> Void) {
+    func downloadUsersFromFirebase(isInitialLoad: Bool, limit: Int, lastDocumentSnapshot: DocumentSnapshot?, completion: @escaping (_ users: [FUser], _ snapshot: DocumentSnapshot?) -> Void) {
         
         var query: Query!
-        var users: [Fuser] = []
+        var users: [FUser] = []
         
         if isInitialLoad {
             query = FirebaseReference(.User).order(by: kREGISTEREDDATE, descending: false).limit(to: limit)
@@ -62,8 +62,8 @@ class FirebaseListner {
                     for userData in snapshot.documents {
                         let userObject = userData.data() as NSDictionary
                         
-                        if !(Fuser.currentUser()?.likedIdArray?.contains(userObject [kOBJECTID] as! String) ?? false) && Fuser.currentID() != userObject[kOBJECTID] as! String{
-                            users.append(Fuser(_dictionary: userObject))
+                        if !(FUser.currentUser()?.likedIdArray?.contains(userObject [kOBJECTID] as! String) ?? false) && FUser.currentID() != userObject[kOBJECTID] as! String{
+                            users.append(FUser(_dictionary: userObject))
                         }
                     }
                     completion(users, snapshot.documents.last!)
