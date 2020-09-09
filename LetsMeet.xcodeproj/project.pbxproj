@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		50F976B72B81579B3DC9C16F /* Pods_LetsMeet_LetsMeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1189429856C8BB0EF76E879E /* Pods_LetsMeet_LetsMeetUITests.framework */; };
 		5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */; };
+		5D3AD25225077CAC00E773A9 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD25125077CAC00E773A9 /* UserProfileTableViewController.swift */; };
+		5D3AD2552508943F00E773A9 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD2542508943F00E773A9 /* ImageCollectionViewCell.swift */; };
 		5D48FFAD24F77523006F2B98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFAC24F77523006F2B98 /* Constants.swift */; };
 		5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */; };
 		5D48FFB424F7922B006F2B98 /* FirebaseListner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */; };
@@ -60,6 +62,8 @@
 		2215C8D1A20181AB90410A26 /* Pods-LetsMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		5B25CD2C43C237407741EA5F /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardFooterView.swift; sourceTree = "<group>"; };
+		5D3AD25125077CAC00E773A9 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
+		5D3AD2542508943F00E773A9 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D48FFAC24F77523006F2B98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseListner.swift; sourceTree = "<group>"; };
@@ -137,6 +141,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5D3AD253250893EB00E773A9 /* Secondary Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D3AD25125077CAC00E773A9 /* UserProfileTableViewController.swift */,
+			);
+			path = "Secondary Views";
+			sourceTree = "<group>";
+		};
+		5D3AD2562508944300E773A9 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5D3AD2542508943F00E773A9 /* ImageCollectionViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		5D48FFAE24F78042006F2B98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +189,7 @@
 			children = (
 				5DCD6C6324FCC32800FF3948 /* ProfileTableViewController.swift */,
 				5D4EEB2C25020691002DBF3C /* CardViewController.swift */,
+				5D3AD253250893EB00E773A9 /* Secondary Views */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -224,6 +245,7 @@
 				5D5CF06624F4FDBF0067CDFA /* SceneDelegate.swift */,
 				5D4EEB2E25021707002DBF3C /* MainViews */,
 				5D48FFB024F78079006F2B98 /* Welcome */,
+				5D3AD2562508944300E773A9 /* Custom Cells */,
 				5D48FFAE24F78042006F2B98 /* Model */,
 				5D4EEB2F2502173D002DBF3C /* FirebeseHelpers */,
 				5D48FFAF24F7805D006F2B98 /* Helpers */,
@@ -511,7 +533,9 @@
 				5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */,
 				5D4EEB3825021D00002DBF3C /* UserCardModel.swift in Sources */,
 				5D5CF06924F4FDBF0067CDFA /* WelcomeViewController.swift in Sources */,
+				5D3AD25225077CAC00E773A9 /* UserProfileTableViewController.swift in Sources */,
 				5D5CF06524F4FDBF0067CDFA /* AppDelegate.swift in Sources */,
+				5D3AD2552508943F00E773A9 /* ImageCollectionViewCell.swift in Sources */,
 				5D5CF0A024F625BF0067CDFA /* RegisterViewController.swift in Sources */,
 				5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */,
 				5DCD6C6624FE231E00FF3948 /* FileStorage.swift in Sources */,

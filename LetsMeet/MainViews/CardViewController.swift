@@ -99,6 +99,24 @@ class CardViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: - Navigation
+    private func showUserProfileFor(userId: String) {
+        let profileView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileTableView") as! UserProfileTableViewController
+        
+        profileView.userObject = getUserWithId(userId: userId)
+        self.present(profileView, animated: true, completion: nil)
+    }
+    
+    //MARK: - Helpers
+    private func getUserWithId(userId: String) -> FUser? {
+        for user in userObjects {
+            if user.objectId == userId {
+                return user
+            }
+        }
+        return nil
+    }
 }
 
 extension CardViewController: SwipeCardStackDelegate, SwipeCardStackDataSource {
@@ -139,6 +157,8 @@ extension CardViewController: SwipeCardStackDelegate, SwipeCardStackDataSource {
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
-        print("card", index)
+        let userId = showReserve ? secondCardModel[index].id : initialCardModels[index].id
+        showUserProfileFor(userId: userId)
+        
     }
 }
