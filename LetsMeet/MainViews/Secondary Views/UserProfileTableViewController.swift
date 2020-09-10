@@ -8,6 +8,11 @@
 import UIKit
 import SKPhotoBrowser
 
+protocol  UserProfileTableViewControllerDelegate {
+    func didLikeUser()
+    func didDisLikeUser()
+}
+
 class UserProfileTableViewController: UITableViewController {
 
     //MARK: - IBOutlets
@@ -33,6 +38,8 @@ class UserProfileTableViewController: UITableViewController {
     
     //MARK: -　Vars
     var userObject: FUser?
+    var delegate: UserProfileTableViewControllerDelegate?
+    
     var allImages: [UIImage] = []
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
     
@@ -57,9 +64,11 @@ class UserProfileTableViewController: UITableViewController {
     
     //MARK: - IBActions
     @IBAction func dislikeButtonPressed(_ sender: Any) {
+        self.delegate?.didDisLikeUser()
         dismissView()
     }
     @IBAction func likeButtonPressed(_ sender: Any) {
+        self.delegate?.didLikeUser()
         saveLikeToUser(userId: userObject!.objectId)
         dismissView()
     }
@@ -168,18 +177,6 @@ class UserProfileTableViewController: UITableViewController {
     //MARK: - Helers
     private func dismissView() {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    //MARK: - Save Like
-    private func saveLikeToUser(userId: String) {
-        if let currentUser = FUser.currentUser() {
-            if !(currentUser.likedIdArray!.contains(userId)) {
-                currentUser.likedIdArray!.append(userId)
-                currentUser.updateCurrentUserInFirestore(withValues: [kLIKEDIDARRAY: currentUser.likedIdArray!]) { (error) in
-                    print("Uodated current user with error", error?.localizedDescription)
-                }
-            }
-        }
     }
 }
 

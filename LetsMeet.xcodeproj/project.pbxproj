@@ -11,6 +11,8 @@
 		5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */; };
 		5D3AD25225077CAC00E773A9 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD25125077CAC00E773A9 /* UserProfileTableViewController.swift */; };
 		5D3AD2552508943F00E773A9 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD2542508943F00E773A9 /* ImageCollectionViewCell.swift */; };
+		5D3AD2582508D05500E773A9 /* LikeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD2572508D05500E773A9 /* LikeObject.swift */; };
+		5D3AD25A2509C7F100E773A9 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD2592509C7F100E773A9 /* GlobalFunctions.swift */; };
 		5D48FFAD24F77523006F2B98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFAC24F77523006F2B98 /* Constants.swift */; };
 		5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */; };
 		5D48FFB424F7922B006F2B98 /* FirebaseListner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */; };
@@ -64,6 +66,8 @@
 		5D3AD24D2505EC2600E773A9 /* UserCardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardFooterView.swift; sourceTree = "<group>"; };
 		5D3AD25125077CAC00E773A9 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		5D3AD2542508943F00E773A9 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D3AD2572508D05500E773A9 /* LikeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeObject.swift; sourceTree = "<group>"; };
+		5D3AD2592509C7F100E773A9 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		5D48FFAC24F77523006F2B98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		5D48FFB324F7922B006F2B98 /* FirebaseListner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseListner.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5CF0A124F652810067CDFA /* FUser.swift */,
+				5D3AD2572508D05500E773A9 /* LikeObject.swift */,
 				5D4EEB3625021CC3002DBF3C /* CardViews */,
 			);
 			path = Model;
@@ -171,6 +176,7 @@
 			children = (
 				5D48FFAC24F77523006F2B98 /* Constants.swift */,
 				5DCD6C6124FC9A1E00FF3948 /* Extensions.swift */,
+				5D3AD2592509C7F100E773A9 /* GlobalFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3AD25A2509C7F100E773A9 /* GlobalFunctions.swift in Sources */,
 				5D48FFB424F7922B006F2B98 /* FirebaseListner.swift in Sources */,
 				5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */,
 				5D4EEB3825021D00002DBF3C /* UserCardModel.swift in Sources */,
@@ -538,6 +545,7 @@
 				5D3AD2552508943F00E773A9 /* ImageCollectionViewCell.swift in Sources */,
 				5D5CF0A024F625BF0067CDFA /* RegisterViewController.swift in Sources */,
 				5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */,
+				5D3AD2582508D05500E773A9 /* LikeObject.swift in Sources */,
 				5DCD6C6624FE231E00FF3948 /* FileStorage.swift in Sources */,
 				5DCD6C6224FC9A1E00FF3948 /* Extensions.swift in Sources */,
 				5D5CF07124F4FDBF0067CDFA /* LetsMeet.xcdatamodeld in Sources */,

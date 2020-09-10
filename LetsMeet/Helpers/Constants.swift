@@ -29,3 +29,9 @@ public let kIMAGELINKS = "imageLinks"
 public let kREGISTEREDDATE = "registeredDate"
 public let kPUSHID = "pushId"
 public let kCURRENTUSER = "currentUser"
+
+//MARK: - Match
+public let kUSERID = "userId"
+public let kDATE = "date"
+public let kLIKEDUSERID = "likedUserId"
+public let kMEMBERIDS = "memberIds"

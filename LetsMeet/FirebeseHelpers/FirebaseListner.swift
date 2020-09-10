@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 
 
 class FirebaseListner {
@@ -74,6 +74,14 @@ class FirebaseListner {
             }
         } else {
             completion(users, nil)
+        }
+    }
+    
+    //MARK: - Likes
+    func checkIfUserLikedUs(userId: String, completion: @escaping(_ didLike: Bool) -> Void) {
+        FirebaseReference(.Like).whereField(kLIKEDUSERID, isEqualTo: FUser.currentID()).whereField(kUSERID, isEqualTo: userId).getDocuments { (snapshot, error) in
+            guard let snapshot = snapshot else {return}
+            completion(snapshot.isEmpty)
         }
     }
 }
