@@ -23,13 +23,18 @@ class CardViewController: UIViewController {
     var showReserve = false
     
     var numberOfCards = 0
-    var initialLoadNumber = 3
+    var initialLoadNumber = 20
 
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        createUsers()
+        
+//        let user = FUser.currentUser()!
+//        user.likedIdArray = []
+//        user.saveUserLocally()
+//        user.saveUserToFirestore()
         
         downloadInitialUsers()
     }
@@ -51,7 +56,7 @@ class CardViewController: UIViewController {
     private func downloadInitialUsers() {
         
         ProgressHUD.show()
-        FirebaseListner.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: initialLoadNumber, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
+        FirebaseListener.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: initialLoadNumber, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
             if allUsers.count == 0 {
                 ProgressHUD.dismiss()
             }
@@ -84,7 +89,7 @@ class CardViewController: UIViewController {
     }
     
     private func downloadMoreUsersInBackground() {
-        FirebaseListner.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: 1000, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
+        FirebaseListener.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: 1000, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
             self.lastDocumentSnapshot = snapshot
             self.secondCardModel = []
             
@@ -105,6 +110,7 @@ class CardViewController: UIViewController {
         let profileView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileTableView") as! UserProfileTableViewController
         
         profileView.userObject = getUserWithId(userId: userId)
+        profileView.delegate = self
         self.present(profileView, animated: true, completion: nil)
     }
     
@@ -116,6 +122,19 @@ class CardViewController: UIViewController {
             }
         }
         return nil
+    }
+    private func checkForLikesWith(userId: String) {
+        print("cheking for like with", userId)
+        
+        if !didLikeUserWith(userID: userId) {
+            saveLikeToUser(userId: userId)
+        }
+        //fetch likes
+        FirebaseListener.shared.checkIfUserLikedUs(userId: userId) { didLike in
+            if didLike {
+                print("create a match")
+            }
+        }
     }
 }
 
@@ -152,8 +171,12 @@ extension CardViewController: SwipeCardStackDelegate, SwipeCardStackDataSource {
         layoutCardStackView()
     }
     
-    func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt ihndex: Int, with direction: SwipeDirection) {
-        print("Swipe to", direction)
+    func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
+        if direction == .right {
+            let user = getUserWithId(userId: showReserve ? secondCardModel[index].id : initialCardModels[index].id)
+            
+            checkForLikesWith(userId: user!.objectId)
+        }
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
@@ -161,4 +184,16 @@ extension CardViewController: SwipeCardStackDelegate, SwipeCardStackDataSource {
         showUserProfileFor(userId: userId)
         
     }
+}
+
+extension CardViewController: UserProfileTableViewControllerDelegate {
+    func didLikeUser() {
+        cardStack.swipe(.right, animated: true)
+    }
+    
+    func didDisLikeUser() {
+        cardStack.swipe(.left, animated: true)
+    }
+    
+    
 }
