@@ -31,10 +31,10 @@ class CardViewController: UIViewController {
         
 //        createUsers()
         
-        let user = FUser.currentUser()!
-        user.likedIdArray = []
-        user.saveUserLocally()
-        user.saveUserToFirestore()
+//        let user = FUser.currentUser()!
+//        user.likedIdArray = []
+//        user.saveUserLocally()
+//        user.saveUserToFirestore()
         
         downloadInitialUsers()
     }
@@ -56,7 +56,7 @@ class CardViewController: UIViewController {
     private func downloadInitialUsers() {
         
         ProgressHUD.show()
-        FirebaseListner.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: initialLoadNumber, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
+        FirebaseListener.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: initialLoadNumber, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
             if allUsers.count == 0 {
                 ProgressHUD.dismiss()
             }
@@ -89,7 +89,7 @@ class CardViewController: UIViewController {
     }
     
     private func downloadMoreUsersInBackground() {
-        FirebaseListner.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: 1000, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
+        FirebaseListener.shared.downloadUsersFromFirebase(isInitialLoad: isInitialLoad, limit: 1000, lastDocumentSnapshot: lastDocumentSnapshot) { (allUsers, snapshot) in
             self.lastDocumentSnapshot = snapshot
             self.secondCardModel = []
             
@@ -130,7 +130,7 @@ class CardViewController: UIViewController {
             saveLikeToUser(userId: userId)
         }
         //fetch likes
-        FirebaseListner.shared.checkIfUserLikedUs(userId: userId) { didLike in
+        FirebaseListener.shared.checkIfUserLikedUs(userId: userId) { didLike in
             if didLike {
                 print("create a match")
             }

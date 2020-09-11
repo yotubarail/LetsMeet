@@ -1,5 +1,5 @@
 //
-//  FirebaseListner.swift
+//  FirebaseListener.swift
 //  LetsMeet
 //
 //  Created by 滝浪翔太 on 2020/08/27.
@@ -9,8 +9,8 @@ import Foundation
 import FirebaseFirestore
 
 
-class FirebaseListner {
-    static let shared = FirebaseListner()
+class FirebaseListener {
+    static let shared = FirebaseListener()
     
     private init() {
         
@@ -77,11 +77,54 @@ class FirebaseListner {
         }
     }
     
+    func downloadUsersFromFirebase(withIds: [String], completion: @escaping (_ users: [FUser]) -> Void) {
+        var usersArray: [FUser] = []
+        var counter = 0
+        
+        for userId in withIds {
+            FirebaseReference(.User).document(userId).getDocument { snapshot,error in
+                guard let snapshot = snapshot else {return}
+                
+                if snapshot.exists {
+                    let user = FUser(_dictionary: snapshot.data()! as NSDictionary)
+                    usersArray.append(user)
+                    counter += 1
+                    
+                    if counter == withIds.count {
+                        completion(usersArray)
+                    }
+                } else {
+                    completion(usersArray)
+                }
+            }
+        }
+    }
+    
     //MARK: - Likes
+    func downloadUserLikes(completion: @escaping(_ likedUserIds: [String]) -> Void) {
+        FirebaseReference(.Like).whereField(kLIKEDUSERID, isEqualTo: FUser.currentID()).getDocuments { (snapshot, error) in
+            var allLikedIds: [String] = []
+            
+            guard let snapshot = snapshot else {
+                completion(allLikedIds)
+                return
+            }
+            if !snapshot.isEmpty {
+                for likeDictionary in snapshot.documents {
+                    allLikedIds.append(likeDictionary[kUSERID] as? String ?? "")
+                }
+                completion(allLikedIds)
+            } else {
+                print("no likes found")
+                completion(allLikedIds)
+            }
+        }
+    }
+    
     func checkIfUserLikedUs(userId: String, completion: @escaping(_ didLike: Bool) -> Void) {
         FirebaseReference(.Like).whereField(kLIKEDUSERID, isEqualTo: FUser.currentID()).whereField(kUSERID, isEqualTo: userId).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot else {return}
-            completion(snapshot.isEmpty)
+            completion(!snapshot.isEmpty)
         }
     }
 }

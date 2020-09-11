@@ -147,7 +147,7 @@ class FUser: Equatable {
         Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
             if error == nil {
                 if authDataResult!.user.isEmailVerified {
-                    FirebaseListner.shared.downloadCurrentUserFromFirebase(userId: authDataResult!.user.uid, email: email)
+                    FirebaseListener.shared.downloadCurrentUserFromFirebase(userId: authDataResult!.user.uid, email: email)
                     completion(error, true)
                 } else {
                     print("メール確認できない")
