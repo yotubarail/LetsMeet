@@ -503,13 +503,13 @@
                                                                                 <rect key="frame" x="0.0" y="371" width="357" height="83"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City / country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0Y-ab-ZlV">
-                                                                                        <rect key="frame" x="20" y="44.333333333333314" width="317" height="28"/>
+                                                                                        <rect key="frame" x="20" y="44.666666666666686" width="317" height="28"/>
                                                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name / Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZD-81-4MR">
-                                                                                        <rect key="frame" x="20" y="5" width="317" height="34.333333333333336"/>
+                                                                                        <rect key="frame" x="20" y="5" width="317" height="34.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
@@ -908,6 +908,117 @@
             </objects>
             <point key="canvasLocation" x="4849" y="-1561"/>
         </scene>
+        <!--Match View Controller-->
+        <scene sceneID="ltW-8Q-hlD">
+            <objects>
+                <viewController storyboardIdentifier="matchView" id="KKD-dg-qam" customClass="MatchViewController" customModule="LetsMeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EaV-KP-BQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vwx-ge-aAp">
+                                <rect key="frame" x="16" y="89" width="343" height="500"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5vS-zJ-nc2">
+                                        <rect key="frame" x="4" y="0.0" width="335" height="281"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="281" id="Eek-jg-dBa"/>
+                                            <constraint firstAttribute="width" constant="335" id="VPx-Ca-AYj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="z7V-bu-a0e">
+                                        <rect key="frame" x="96.666666666666686" y="99" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="XpL-jk-m14"/>
+                                            <constraint firstAttribute="width" constant="150" id="a5E-SX-wPn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matchImage" translatesAutoresizingMaskIntoConstraints="NO" id="u9i-jD-34d">
+                                        <rect key="frame" x="33.666666666666657" y="219" width="276" height="62"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name / Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcb-Ad-DKG">
+                                        <rect key="frame" x="16" y="289" width="311" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="fEJ-hu-XyO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYk-QI-7Ld">
+                                        <rect key="frame" x="16" y="326" width="311" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4Wf-hn-gxz"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="D9n-Nt-Bz3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwm-bg-1hw">
+                                        <rect key="frame" x="52" y="381" width="239" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="239" id="ers-ag-BUB"/>
+                                        </constraints>
+                                        <state key="normal" image="sendMessage"/>
+                                        <connections>
+                                            <action selector="sendMessageButtonPressed:" destination="KKD-dg-qam" eventType="touchUpInside" id="erm-3V-H7z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXH-Ce-edz">
+                                        <rect key="frame" x="52" y="431" width="239" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="239" id="GEz-oo-v8N"/>
+                                        </constraints>
+                                        <state key="normal" image="keepSwiping"/>
+                                        <connections>
+                                            <action selector="keepSwipingButtonPressed:" destination="KKD-dg-qam" eventType="touchUpInside" id="Vpe-0f-aaF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="z7V-bu-a0e" firstAttribute="centerX" secondItem="Vwx-ge-aAp" secondAttribute="centerX" id="A9f-rY-24l"/>
+                                    <constraint firstItem="5vS-zJ-nc2" firstAttribute="top" secondItem="Vwx-ge-aAp" secondAttribute="top" id="HFA-jm-WhB"/>
+                                    <constraint firstAttribute="trailing" secondItem="EYk-QI-7Ld" secondAttribute="trailing" constant="16" id="Ife-Gu-YbL"/>
+                                    <constraint firstItem="5vS-zJ-nc2" firstAttribute="centerX" secondItem="Vwx-ge-aAp" secondAttribute="centerX" id="JPb-gV-N8x"/>
+                                    <constraint firstItem="u9i-jD-34d" firstAttribute="centerX" secondItem="Vwx-ge-aAp" secondAttribute="centerX" id="QUR-bd-PQl"/>
+                                    <constraint firstItem="HXH-Ce-edz" firstAttribute="top" secondItem="Gwm-bg-1hw" secondAttribute="bottom" constant="10" id="SAw-ll-G4X"/>
+                                    <constraint firstItem="u9i-jD-34d" firstAttribute="centerX" secondItem="Vwx-ge-aAp" secondAttribute="centerX" id="V6Q-eO-peJ"/>
+                                    <constraint firstItem="Gwm-bg-1hw" firstAttribute="centerX" secondItem="Vwx-ge-aAp" secondAttribute="centerX" id="Vmi-Xl-Z06"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jcb-Ad-DKG" secondAttribute="trailing" constant="16" id="XEO-Jg-nUB"/>
+                                    <constraint firstItem="Gwm-bg-1hw" firstAttribute="top" secondItem="EYk-QI-7Ld" secondAttribute="bottom" constant="20" id="c7g-E7-5Pd"/>
+                                    <constraint firstAttribute="height" constant="500" id="gt2-3k-i49"/>
+                                    <constraint firstItem="HXH-Ce-edz" firstAttribute="centerX" secondItem="Vwx-ge-aAp" secondAttribute="centerX" id="kgd-GP-R4t"/>
+                                    <constraint firstItem="Jcb-Ad-DKG" firstAttribute="top" secondItem="5vS-zJ-nc2" secondAttribute="bottom" constant="8" id="kji-KQ-IJJ"/>
+                                    <constraint firstItem="Jcb-Ad-DKG" firstAttribute="leading" secondItem="Vwx-ge-aAp" secondAttribute="leading" constant="16" id="scK-VV-isk"/>
+                                    <constraint firstItem="EYk-QI-7Ld" firstAttribute="top" secondItem="Jcb-Ad-DKG" secondAttribute="bottom" constant="2" id="tOz-Cq-CjK"/>
+                                    <constraint firstItem="EYk-QI-7Ld" firstAttribute="leading" secondItem="Vwx-ge-aAp" secondAttribute="leading" constant="16" id="uvd-9g-l0q"/>
+                                    <constraint firstItem="u9i-jD-34d" firstAttribute="top" secondItem="z7V-bu-a0e" secondAttribute="bottom" constant="-30" id="wAz-CJ-RFr"/>
+                                    <constraint firstItem="u9i-jD-34d" firstAttribute="centerY" secondItem="Vwx-ge-aAp" secondAttribute="centerY" id="zdb-KT-cdT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vwx-ge-aAp" firstAttribute="top" secondItem="DbK-ap-BeA" secondAttribute="top" constant="45" id="AgW-fr-VIM"/>
+                            <constraint firstItem="Vwx-ge-aAp" firstAttribute="leading" secondItem="DbK-ap-BeA" secondAttribute="leading" constant="16" id="VsN-oY-6mD"/>
+                            <constraint firstItem="DbK-ap-BeA" firstAttribute="trailing" secondItem="Vwx-ge-aAp" secondAttribute="trailing" constant="16" id="ZFi-t7-wCd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DbK-ap-BeA"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageVIew" destination="z7V-bu-a0e" id="3e2-i6-hJf"/>
+                        <outlet property="cardBackgroundView" destination="Vwx-ge-aAp" id="zPu-VQ-PsC"/>
+                        <outlet property="cityCountryLabel" destination="EYk-QI-7Ld" id="RZf-dq-LZX"/>
+                        <outlet property="heartView" destination="5vS-zJ-nc2" id="vGx-aJ-5ID"/>
+                        <outlet property="nameAgeLabel" destination="Jcb-Ad-DKG" id="EyI-28-smw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAI-h0-oU6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5676" y="-1561.3300492610838"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="det-tk-RU8">
             <objects>
@@ -954,7 +1065,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65O-2C-M1m">
-                                                    <rect key="frame" x="84" y="28.333333333333336" width="260" height="23.333333333333336"/>
+                                                    <rect key="frame" x="84" y="28.666666666666671" width="260" height="23"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1471,8 +1582,12 @@
         <image name="dislike" width="80" height="80"/>
         <image name="edit" width="80" height="80"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="keepSwiping" width="239" height="40"/>
         <image name="like" width="60" height="60"/>
         <image name="loginBavkground" width="375" height="812"/>
+        <image name="matchBackground" width="304" height="214"/>
+        <image name="matchImage" width="276" height="62"/>
+        <image name="sendMessage" width="239" height="40"/>
         <image name="settings" width="80" height="80"/>
         <image name="signin" width="316" height="55"/>
         <image name="smiley.fill" catalog="system" width="128" height="121"/>
