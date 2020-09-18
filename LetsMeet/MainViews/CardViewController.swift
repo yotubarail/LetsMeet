@@ -31,10 +31,10 @@ class CardViewController: UIViewController {
         
 //        createUsers()
         
-        let user = FUser.currentUser()!
-        user.likedIdArray = []
-        user.saveUserLocally()
-        user.saveUserToFirestore()
+//        let user = FUser.currentUser()!
+//        user.likedIdArray = []
+//        user.saveUserLocally()
+//        user.saveUserToFirestore()
         
         downloadInitialUsers()
     }

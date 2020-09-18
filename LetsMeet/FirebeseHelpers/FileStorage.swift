@@ -42,7 +42,7 @@ class FileStorage {
         var nameStuffix = 0
         
         for image in images {
-            let fileDirectory = "UserImages/" + FUser.currentID() + "/" + "\(nameStuffix)" + ".jpg"
+            let fileDirectory = "UserImages/" + FUser.currentId() + "/" + "\(nameStuffix)" + ".jpg"
             uploadImage(image!, directory: fileDirectory) { (imageLink) in
                 if imageLink != nil {
                     imageLinkArray.append(imageLink!)

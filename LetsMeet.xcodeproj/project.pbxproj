@@ -17,6 +17,9 @@
 		5D3AD261250B37C000E773A9 /* LikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD260250B37C000E773A9 /* LikeTableViewCell.swift */; };
 		5D3AD263250B46F300E773A9 /* MatchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD262250B46F300E773A9 /* MatchObject.swift */; };
 		5D3AD265250B5BC400E773A9 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD264250B5BC400E773A9 /* MatchViewController.swift */; };
+		5D3AD2692511A0F200E773A9 /* NewMatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD2682511A0F100E773A9 /* NewMatchCollectionViewCell.swift */; };
+		5D3AD26B2511A53C00E773A9 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD26A2511A53C00E773A9 /* RecentTableViewCell.swift */; };
+		5D3AD26F2511A8A700E773A9 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AD26E2511A8A700E773A9 /* RecentViewController.swift */; };
 		5D48FFAD24F77523006F2B98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFAC24F77523006F2B98 /* Constants.swift */; };
 		5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */; };
 		5D48FFB424F7922B006F2B98 /* FirebaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FFB324F7922B006F2B98 /* FirebaseListener.swift */; };
@@ -76,6 +79,9 @@
 		5D3AD260250B37C000E773A9 /* LikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewCell.swift; sourceTree = "<group>"; };
 		5D3AD262250B46F300E773A9 /* MatchObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchObject.swift; sourceTree = "<group>"; };
 		5D3AD264250B5BC400E773A9 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		5D3AD2682511A0F100E773A9 /* NewMatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D3AD26A2511A53C00E773A9 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		5D3AD26E2511A8A700E773A9 /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		5D48FFAC24F77523006F2B98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D48FFB124F780E6006F2B98 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		5D48FFB324F7922B006F2B98 /* FirebaseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseListener.swift; sourceTree = "<group>"; };
@@ -167,6 +173,8 @@
 			children = (
 				5D3AD2542508943F00E773A9 /* ImageCollectionViewCell.swift */,
 				5D3AD260250B37C000E773A9 /* LikeTableViewCell.swift */,
+				5D3AD2682511A0F100E773A9 /* NewMatchCollectionViewCell.swift */,
+				5D3AD26A2511A53C00E773A9 /* RecentTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				5D4EEB2C25020691002DBF3C /* CardViewController.swift */,
+				5D3AD26E2511A8A700E773A9 /* RecentViewController.swift */,
 				5D3AD25B250A09CD00E773A9 /* NotificationViewController.swift */,
 				5DCD6C6324FCC32800FF3948 /* ProfileTableViewController.swift */,
 				5D3AD253250893EB00E773A9 /* Secondary Views */,
@@ -551,6 +560,7 @@
 				5D48FFB424F7922B006F2B98 /* FirebaseListener.swift in Sources */,
 				5D48FFB224F780E6006F2B98 /* FCollectionReference.swift in Sources */,
 				5D4EEB3825021D00002DBF3C /* UserCardModel.swift in Sources */,
+				5D3AD26B2511A53C00E773A9 /* RecentTableViewCell.swift in Sources */,
 				5D5CF06924F4FDBF0067CDFA /* WelcomeViewController.swift in Sources */,
 				5D3AD25225077CAC00E773A9 /* UserProfileTableViewController.swift in Sources */,
 				5D3AD25C250A09CD00E773A9 /* NotificationViewController.swift in Sources */,
@@ -559,6 +569,7 @@
 				5D5CF0A024F625BF0067CDFA /* RegisterViewController.swift in Sources */,
 				5D3AD24E2505EC2600E773A9 /* UserCardFooterView.swift in Sources */,
 				5D3AD2582508D05500E773A9 /* LikeObject.swift in Sources */,
+				5D3AD2692511A0F200E773A9 /* NewMatchCollectionViewCell.swift in Sources */,
 				5D3AD263250B46F300E773A9 /* MatchObject.swift in Sources */,
 				5DCD6C6624FE231E00FF3948 /* FileStorage.swift in Sources */,
 				5D3AD265250B5BC400E773A9 /* MatchViewController.swift in Sources */,
@@ -568,6 +579,7 @@
 				5D5CF06724F4FDBF0067CDFA /* SceneDelegate.swift in Sources */,
 				5D5CF0A224F652810067CDFA /* FUser.swift in Sources */,
 				5D3AD261250B37C000E773A9 /* LikeTableViewCell.swift in Sources */,
+				5D3AD26F2511A8A700E773A9 /* RecentViewController.swift in Sources */,
 				5D4EEB3A25021D8B002DBF3C /* UserCardOverlay.swift in Sources */,
 				5D4EEB2D25020691002DBF3C /* CardViewController.swift in Sources */,
 				5DCD6C6424FCC32800FF3948 /* ProfileTableViewController.swift in Sources */,
