@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 //MARK: - Mathes
 func removeCurrentUserIdFrom(userIds: [String]) -> [String] {
@@ -37,4 +38,42 @@ func saveLikeToUser(userId: String) {
 
 func didLikeUserWith(userID: String) -> Bool {
     return FUser.currentUser()?.likedIdArray?.contains(userID) ?? false
+}
+
+//MARK: - RecentChats
+func createRecentItems(chatRoomId: String, users: [FUser]) {
+    
+    var memberIdsToCreateRecent:[String] = []
+    
+    for user in users {
+        memberIdsToCreateRecent.append(user.objectId)
+    }
+    
+    FirebaseReference(.Recent).whereField(kCHATROOMID, isEqualTo: chatRoomId).getDocuments { snapshot, error in
+        guard let snapshot = snapshot else { return }
+        
+        if !snapshot.isEmpty {
+            
+        }
+    }
+    
+}
+
+func removeMemberWhoHasRecent(snapshot: QuerySnapshot, memberIds: [String]) -> [String] {
+    
+    var memberIdsToCreateRecent = memberIds
+    
+    for recentData in snapshot.documents {
+        
+        let currentRecent = recentData.data() as Dictionary
+        
+        if let currentUserId = currentRecent[kSENDERID] {
+            if memberIdsToCreateRecent.contains(currentUserId as! String) {
+                let index = memberIdsToCreateRecent.firstIndex(of: currentUserId as! String)!
+                memberIdsToCreateRecent.remove(at: index)
+            }
+        }
+    }
+    
+    return memberIdsToCreateRecent
 }

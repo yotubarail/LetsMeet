@@ -35,3 +35,12 @@ public let kUSERID = "userId"
 public let kDATE = "date"
 public let kLIKEDUSERID = "likedUserId"
 public let kMEMBERIDS = "memberIds"
+
+//MARK: - Recents
+public let kCHATROOMID = "chatRoomId"
+public let kSENDERID = "senderId"
+public let kSENDERNAME = "senderName"
+public let kRECEIVERID = "receiverId"
+public let kRECEIVERNAME = "receiverName"
+public let kLASTMESSAGE = "lastMessage"
+public let kUNREADCOUNTER = "unreadCounter"
