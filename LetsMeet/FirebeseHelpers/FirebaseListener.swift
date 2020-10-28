@@ -62,7 +62,7 @@ class FirebaseListener {
                     for userData in snapshot.documents {
                         let userObject = userData.data() as NSDictionary
                         
-                        if !(FUser.currentUser()?.likedIdArray?.contains(userObject [kOBJECTID] as! String) ?? false) && FUser.currentID() != userObject[kOBJECTID] as! String{
+                        if !(FUser.currentUser()?.likedIdArray?.contains(userObject [kOBJECTID] as! String) ?? false) && FUser.currentId() != userObject[kOBJECTID] as! String{
                             users.append(FUser(_dictionary: userObject))
                         }
                     }
@@ -102,7 +102,7 @@ class FirebaseListener {
     
     //MARK: - Likes
     func downloadUserLikes(completion: @escaping(_ likedUserIds: [String]) -> Void) {
-        FirebaseReference(.Like).whereField(kLIKEDUSERID, isEqualTo: FUser.currentID()).getDocuments { (snapshot, error) in
+        FirebaseReference(.Like).whereField(kLIKEDUSERID, isEqualTo: FUser.currentId()).getDocuments { (snapshot, error) in
             var allLikedIds: [String] = []
             
             guard let snapshot = snapshot else {
@@ -122,9 +122,34 @@ class FirebaseListener {
     }
     
     func checkIfUserLikedUs(userId: String, completion: @escaping(_ didLike: Bool) -> Void) {
-        FirebaseReference(.Like).whereField(kLIKEDUSERID, isEqualTo: FUser.currentID()).whereField(kUSERID, isEqualTo: userId).getDocuments { (snapshot, error) in
+        FirebaseReference(.Like).whereField(kLIKEDUSERID, isEqualTo: FUser.currentId()).whereField(kUSERID, isEqualTo: userId).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot else {return}
             completion(!snapshot.isEmpty)
         }
+    }
+    
+    //MARK: - Match
+    func downloadUserMatches(completion: @escaping(_ matchUserIds: [String]) -> Void) {
+        let lastMonth = Calendar.current.date(byAdding: .month, value: -1, to: Date()) ?? Date()
+        FirebaseReference(.Match).whereField(kMEMBERIDS, arrayContains: FUser.currentId()).whereField(kDATE, isGreaterThan: lastMonth).order(by: kDATE, descending: true).getDocuments { (snapshot, error) in
+            
+            var allMatchIds: [String] = []
+            guard let snapshot = snapshot else { return }
+            
+            if !snapshot.isEmpty {
+                for matchDictionary in snapshot.documents {
+                    allMatchIds += matchDictionary[kMEMBERIDS] as? [String] ?? [""]
+                }
+                completion(removeCurrentUserIdFrom(userIds: allMatchIds))
+            } else {
+                print("No matches found")
+                completion(allMatchIds)
+            }
+        }
+    }
+    
+    func saveMatch(userId: String) {
+        let match = MatchObject(id: UUID().uuidString, memberIds: [FUser.currentId(), userId], date: Date())
+        match.saveToFirestore()
     }
 }

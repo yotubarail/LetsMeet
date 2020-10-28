@@ -120,7 +120,7 @@ class FUser: Equatable {
     }
     
     //MARK: - Returning current user
-    class func currentID() -> String {
+    class func currentId() -> String {
         return Auth.auth().currentUser!.uid
     }
     
@@ -241,7 +241,7 @@ class FUser: Equatable {
             let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
             userObject.setValuesForKeys(withValues)
             
-            FirebaseReference(.User).document(FUser.currentID()).updateData(withValues) { error in
+            FirebaseReference(.User).document(FUser.currentId()).updateData(withValues) { error in
                 completion(error)
                 if error == nil {
                     FUser(_dictionary: userObject).saveUserLocally()

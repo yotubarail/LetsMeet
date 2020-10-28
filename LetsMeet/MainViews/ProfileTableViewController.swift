@@ -160,10 +160,10 @@ class ProfileTableViewController: UITableViewController {
     //MARK: - FileStorage
     private func uploadAvatar(_ image: UIImage, completion: @escaping (_ avatarLink: String?) -> Void) {
         ProgressHUD.show()
-        let fileDirectory = "Avatars/_" + FUser.currentID() + ".jpg"
+        let fileDirectory = "Avatars/_" + FUser.currentId() + ".jpg"
         FileStorage.uploadImage(image, directory: fileDirectory) {(avatarLink) in
             ProgressHUD.dismiss()
-            FileStorage.saveImageLocally(imageData: image.jpegData(compressionQuality: 0.8)! as NSData, fileName: FUser.currentID())
+            FileStorage.saveImageLocally(imageData: image.jpegData(compressionQuality: 0.8)! as NSData, fileName: FUser.currentId())
             completion(avatarLink)
         }
     }
