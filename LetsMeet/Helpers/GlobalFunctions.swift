@@ -40,6 +40,26 @@ func didLikeUserWith(userID: String) -> Bool {
     return FUser.currentUser()?.likedIdArray?.contains(userID) ?? false
 }
 
+//MARK: - Starting chat
+func startChat(user1: FUser, user2: FUser) -> String {
+    
+    let chatRoomId = chatRoomIdFrom(userId: user1.objectId, user2Id: user2.objectId)
+    
+    createRecentItems(chatRoomId: chatRoomId, users: [user1, user2])
+    
+    return chatRoomId
+}
+
+func chatRoomIdFrom(userId: String, user2Id: String) -> String {
+    
+    var chatRoomId = ""
+    let value = userId.compare(user2Id).rawValue
+    
+    chatRoomId = value < 0 ? userId + user2Id : user2Id + userId
+    
+    return chatRoomId
+}
+
 //MARK: - RecentChats
 func createRecentItems(chatRoomId: String, users: [FUser]) {
     
@@ -53,10 +73,32 @@ func createRecentItems(chatRoomId: String, users: [FUser]) {
         guard let snapshot = snapshot else { return }
         
         if !snapshot.isEmpty {
+            memberIdsToCreateRecent = removeMemberWhoHasRecent(snapshot: snapshot, memberIds: memberIdsToCreateRecent)
+        }
+        
+        for userId in memberIdsToCreateRecent {
+            let senderUser = userId == FUser.currentId() ? FUser.currentUser()! : getReceiverFrom(users: users)
             
+            let receiverUser = userId == FUser.currentId() ? getReceiverFrom(users: users) : FUser.currentUser()!
+            
+            let recentObject = RecentChat()
+            
+            recentObject.objectId = UUID().uuidString
+            recentObject.chatRoomId = ""
+            recentObject.senderId = senderUser.objectId
+            recentObject.senderName = senderUser.username
+            recentObject.receiverId = receiverUser.objectId
+            recentObject.receiverName = receiverUser.username
+            recentObject.date = Date()
+            recentObject.memberIds = [senderUser.objectId, receiverUser.objectId]
+            
+            recentObject.lastMessage = ""
+            recentObject.unreadCounter = 0
+            recentObject.avatarLink = receiverUser.avatarLink
+            
+            recentObject.saveToFireStore()
         }
     }
-    
 }
 
 func removeMemberWhoHasRecent(snapshot: QuerySnapshot, memberIds: [String]) -> [String] {
@@ -76,4 +118,13 @@ func removeMemberWhoHasRecent(snapshot: QuerySnapshot, memberIds: [String]) -> [
     }
     
     return memberIdsToCreateRecent
+}
+
+func getReceiverFrom(users: [FUser]) -> FUser {
+    var allUsers = users
+    
+    allUsers.remove(at: allUsers.firstIndex(of: FUser.currentUser()!)!)
+    
+    
+    return allUsers.first!
 }

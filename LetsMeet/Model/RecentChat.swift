@@ -18,7 +18,7 @@ class RecentChat {
     var receiverId = ""
     var receiverName = ""
     var date = Date()
-    var membetIds = [""]
+    var memberIds = [""]
     var lastMessage = ""
     var unreadCounter = 0
     var avatarLink = ""
@@ -33,7 +33,7 @@ class RecentChat {
                                       receiverId,
                                       receiverName,
                                       date,
-                                      membetIds,
+                                      memberIds,
                                       lastMessage,
                                       unreadCounter,
                                       avatarLink
@@ -65,7 +65,7 @@ class RecentChat {
         receiverId = recentDocument[kRECEIVERID] as? String ?? ""
         receiverName = recentDocument[kRECEIVERNAME] as? String ?? ""
         date = (recentDocument[kDATE] as? Timestamp)?.dateValue() ?? Date()
-        membetIds = recentDocument[kMEMBERIDS] as? [String] ?? [""]
+        memberIds = recentDocument[kMEMBERIDS] as? [String] ?? [""]
         lastMessage = recentDocument[kLASTMESSAGE] as? String ?? ""
         unreadCounter = recentDocument[kUNREADCOUNTER] as? Int ?? 0
         avatarLink = recentDocument[kAVATARLINK] as? String ?? ""
